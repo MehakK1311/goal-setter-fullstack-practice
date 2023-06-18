@@ -7,7 +7,7 @@ const goalRoutes = require("./routes/goalRoutes");
 const userRoutes = require("./routes/userRoutes");
 
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8081;
 
 connectDB()
 
