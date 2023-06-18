@@ -44,7 +44,6 @@ const registerUser = asyncHandler(async (req, res) => {
     throw new Error("Invalid User Data");
   }
 
-  res.json({ message: "register" });
 });
 
 //@desc     authenticate users
@@ -66,21 +65,13 @@ const loginUser = asyncHandler(async (req, res) => {
     throw new Error("Invalid credentials");
   }
 
-  res.json({ message: "login" });
 });
 
 //@desc     get users data
 //@route    GET api/users/me
 //@access   private
 const getMe = asyncHandler(async (req, res) => {
-  const {_id, name, email}= await User.findById(req.user.id);
-
-  res.status(200).json({
-    _id,
-    name,
-    email,
-  });
-  res.json({ message: "mee" });
+  res.status(200).json(req.user);
 });
 
 //Generate JWT
