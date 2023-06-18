@@ -1,7 +1,6 @@
 import {
   createSlice,
   createAsyncThunk,
-  isAsyncThunkAction,
 } from "@reduxjs/toolkit";
 import authService from "./authService";
 
