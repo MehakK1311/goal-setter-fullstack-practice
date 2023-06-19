@@ -9,7 +9,7 @@ const initialState = {
   message: "",
 };
 
-//create new goal
+// Create new goal
 export const createGoal = createAsyncThunk(
   "goals/create",
   async (goalData, thunkAPI) => {
@@ -67,7 +67,7 @@ export const deleteGoal = createAsyncThunk(
 );
 
 export const goalSlice = createSlice({
-  name: "goals",
+  name: "goal",
   initialState,
   reducers: {
     reset: (state) => initialState,
@@ -79,7 +79,6 @@ export const goalSlice = createSlice({
       })
       .addCase(createGoal.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.isError = false;
         state.isSuccess = true;
         state.goals.push(action.payload);
       })
@@ -93,7 +92,6 @@ export const goalSlice = createSlice({
       })
       .addCase(getGoals.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.isError = false;
         state.isSuccess = true;
         state.goals = action.payload;
       })
