@@ -31,7 +31,6 @@ app.use(express.urlencoded({extended: false}))
 app.use('/api/goals', goalRoutes)
 app.use('/api/user', userRoutes)
 
-
 app.use(errorHandler)
 
 app.listen(PORT, () => console.log(`listening on port ${PORT}`));
